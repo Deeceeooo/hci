@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlink Generator</title>
+    <style>
+        a:link, a:visited {
+            color: #2f2d2d;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #3415a2;
+            text-decoration: none;
+        }
+        /* Style the div container */
+        #video-container {
+            width: 100%;
+            height: 500px; /* Adjust the height as needed */
+            display: none; /* Initially hidden */
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The link the user will click -->
+    <a href="javascript:void(0);" id="playVideoLink">HCI Lec Reviewer</a>
+
+    <!-- Container for the video (Initially hidden) -->
+    <div id="video-container">
+        <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // When the link is clicked, show the video container and load the video
+        document.getElementById('playVideoLink').onclick = function() {
+            var videoContainer = document.getElementById('video-container');
+            var videoFrame = document.getElementById('videoFrame');
+            
+            // Show the video container
+            videoContainer.style.display = 'block';
+
+            // Set the video source URL with autoplay enabled
+            videoFrame.src = "https://www.youtube.com/embed/ky7AEJ48tSI?autoplay=1";
+        };
+    </script>
+
+</body>
+</html>
